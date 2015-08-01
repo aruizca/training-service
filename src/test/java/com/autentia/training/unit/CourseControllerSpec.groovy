@@ -1,4 +1,4 @@
-package com.autentia.training.spec
+package com.autentia.training.unit
 
 import com.autentia.training.controller.CourseController
 import org.springframework.test.web.servlet.setup.MockMvcBuilders

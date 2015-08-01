@@ -4,21 +4,18 @@ import groovy.sql.Sql
 import groovy.util.logging.Log4j
 import org.apache.ibatis.datasource.pooled.PooledDataSource
 import org.h2.server.web.WebServlet
+import org.mybatis.spring.SqlSessionFactoryBean
+import org.mybatis.spring.annotation.MapperScan
 import org.springframework.boot.context.embedded.ServletRegistrationBean
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
 import org.springframework.core.io.ClassPathResource
+import org.springframework.jdbc.datasource.DataSourceTransactionManager
 
 import javax.sql.DataSource
 
-import org.mybatis.spring.SqlSessionFactoryBean
-import org.mybatis.spring.annotation.MapperScan
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
-import org.springframework.jdbc.core.JdbcTemplate
-import org.springframework.jdbc.datasource.DataSourceTransactionManager
-import org.springframework.jdbc.datasource.SimpleDriverDataSource
-
 @Configuration
-@MapperScan('com.autentia.training.persistence')
+@MapperScan('com.autentia.training.mapper')
 @Log4j
 class DataConfig {
 
@@ -39,7 +36,11 @@ class DataConfig {
         return dataSource
     }
 
-    void initializeDB(DataSource dataSource) {
+    /**
+     * Initialize DB schema and loads initial set of data
+     * @param dataSource
+     */
+    private void initializeDB(DataSource dataSource) {
         Sql sql = Sql.newInstance(dataSource)
 
         log.debug('Creating DB schema...')
@@ -70,7 +71,7 @@ class DataConfig {
     }
 
     /**
-     * This bean enables h2 web console at /console path
+     * This bean enables H2 web console at /console path
      * @return
      */
     @Bean
