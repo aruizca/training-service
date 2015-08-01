@@ -9,4 +9,16 @@ class Course implements Serializable {
     String title
     Integer hours
     Integer level
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", active=" + active +
+                ", teacher='" + teacher + '\'' +
+                ", title='" + title + '\'' +
+                ", hours=" + hours +
+                ", level=" + level +
+                '}';
+    }
 }

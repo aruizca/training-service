@@ -22,6 +22,7 @@ class DataConfig {
     @Bean
     DataSource dataSource() {
         log.debug('Initialising the DB....')
+
         PooledDataSource dataSource = new PooledDataSource(
                 'org.h2.Driver',
                 'jdbc:h2:mem:testDb:MVCC=true;LOCK_TIMEOUT=5000',

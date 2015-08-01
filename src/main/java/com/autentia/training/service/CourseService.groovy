@@ -13,6 +13,6 @@ interface CourseService {
      * @param course
      * @return success
      */
-    public boolean save(Course course)
+    public Course save(Course course)
 
 }
