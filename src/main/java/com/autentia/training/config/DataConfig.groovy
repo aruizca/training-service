@@ -41,7 +41,7 @@ class DataConfig {
      * Initialize DB schema and loads initial set of data
      * @param dataSource
      */
-    private void initializeDB(DataSource dataSource) {
+    static void initializeDB(DataSource dataSource) {
         Sql sql = Sql.newInstance(dataSource)
 
         log.debug('Creating DB schema...')

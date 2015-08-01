@@ -1,13 +1,18 @@
 package com.autentia.training.integration
 
 import com.autentia.training.Application
+import com.autentia.training.config.DataConfig
 import groovyx.net.http.RESTClient
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.IntegrationTest
 import org.springframework.boot.test.SpringApplicationContextLoader
 import org.springframework.http.MediaType
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.web.WebAppConfiguration
 import spock.lang.Specification
+import spock.lang.Unroll
+
+import javax.sql.DataSource
 
 @ContextConfiguration(loader = SpringApplicationContextLoader.class, classes = Application.class)
 @WebAppConfiguration
@@ -16,12 +21,15 @@ class CourseControllerIntSpec extends Specification {
 
     RESTClient client
 
+    @Autowired
+    DataSource dataSource
+
     def setup() {
         client = new RESTClient('http://localhost:8080/training/api/course/')
     }
 
     def cleanup() {
-
+        DataConfig.initializeDB(dataSource)
     }
 
     def "test we can retrieve the preloaded courses in JSON array"() {
@@ -35,7 +43,8 @@ class CourseControllerIntSpec extends Specification {
         response.data?.size() == 44
     }
 
-    def "test that a new course can be added"() {
+    @Unroll
+    def "test saving a course"() {
         given: "the current total number of courses"
         def response = client.get(path: 'list')
         def totalCourses = response.data.size()
@@ -68,6 +77,17 @@ class CourseControllerIntSpec extends Specification {
 
         then: "the current total number of courses has been increased by 1"
         response.data?.size() == totalCourses + 1
+
+        when: "we try to save and invalid JSON payload"
+        response = client.post(
+                path: 'save',
+                body: [
+                        active : true,
+                ],
+                requestContentType: MediaType.APPLICATION_JSON_VALUE
+        )
+        then: "we get an exception"
+        thrown(Exception)
     }
 
 }
