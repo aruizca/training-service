@@ -5,4 +5,4 @@ branches:
   only:
   - master
 script:
-- mvn install package spring-boot:run test
+- mvn package test
