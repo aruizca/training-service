@@ -16,14 +16,28 @@ Training Service ![Travis CI build](https://travis-ci.org/aruizca/training-servi
 java -Dserver.port=8080 -jar target/training-service-0.1-SNAPSHOT.jar
 ```
 
-## Heroku notes
-Unable to deploy due to mybatis error that I don't get locally
+## Heroku info
+Service deployed at: http://autentia-training-service.herokuapp.com
 
+Endpoints available:
+* List courses (GET)
 ```
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.autentia.training.mapper.CourseMapper] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+/training-service/api/course/list
 ```
 
-To access to console:
+
+* Save new course (POST)
 ```
-heroku run bash --app autentia-training-service
+/training-service/api/course/list
 ```
+
+Accepts JSON payload. Eg:
+ ```
+ {
+   "active": true,
+   "teacher": "Roberto Canales",
+   "title": "Curso TDD",
+   "hours": 15,
+ }
+ ```
+ 
