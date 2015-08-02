@@ -1,6 +1,6 @@
 package com.autentia.training.domain
 
-class Course implements Serializable {
+public class Course implements Serializable {
 
     static final long serialVersionUID = 1L
     Long id
