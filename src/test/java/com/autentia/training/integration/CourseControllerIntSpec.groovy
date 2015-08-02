@@ -25,7 +25,7 @@ class CourseControllerIntSpec extends Specification {
     DataSource dataSource
 
     def setup() {
-        client = new RESTClient('http://localhost:8080/training/api/course/')
+        client = new RESTClient('http://localhost:8080/training-service/api/course/')
     }
 
     def cleanup() {
