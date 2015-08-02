@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.autentia</groupId>
-    <artifactId>training</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>training-service</artifactId>
+    <version>0.1-SNAPSHOT</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
