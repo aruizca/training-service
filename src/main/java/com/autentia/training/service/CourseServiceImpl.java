@@ -31,4 +31,12 @@ class CourseServiceImpl implements CourseService {
         log.debug("The new course id is: ${course.id}");
         return course;
     }
+
+    public CourseMapper getCourseMapper() {
+        return courseMapper;
+    }
+
+    public void setCourseMapper(CourseMapper courseMapper) {
+        this.courseMapper = courseMapper;
+    }
 }
