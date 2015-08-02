@@ -5,6 +5,7 @@ import com.autentia.training.mapper.CourseMapper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ class CourseServiceImpl implements CourseService {
     private Log log = LogFactory.getLog(this.getClass());
 
     @Autowired
+    @Qualifier("courseMapper")
     private CourseMapper courseMapper;
 
     @Override

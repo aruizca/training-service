@@ -3,6 +3,15 @@ package com.autentia.training.domain;
 import java.io.Serializable;
 
 public class Course implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    private Long id;
+    private Boolean active;
+    private String teacher;
+    private String title;
+    private Integer hours;
+    private Integer level;
+
     @Override
     public String toString() {
         return "Course{" + "id=" + id + ", active=" + active + ", teacher='" + teacher + "\'" + ", title='" + title + "\'" + ", hours=" + hours + ", level=" + level + "}";
@@ -59,12 +68,6 @@ public class Course implements Serializable {
     public void setLevel(Integer level) {
         this.level = level;
     }
-
-    private static final long serialVersionUID = 1L;
-    private Long id;
-    private Boolean active;
-    private String teacher;
-    private String title;
-    private Integer hours;
-    private Integer level;
 }
+
+
