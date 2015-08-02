@@ -1,13 +1,10 @@
 package com.autentia.training.config;
 
-import groovy.sql.Sql;
-import groovy.util.logging.Log4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.codehaus.groovy.runtime.DefaultGroovyMethods;
 import org.h2.server.web.WebServlet;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -23,7 +20,6 @@ import java.io.InputStream;
 
 @Configuration
 @MapperScan("com.autentia.training.mapper")
-@Log4j
 public class DataConfig {
 
     private static Log log = LogFactory.getLog(DataConfig.class);
