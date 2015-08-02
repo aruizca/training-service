@@ -47,4 +47,3 @@ INSERT INTO TRAINING.course (active,teacher,title,hours,level) VALUES (true,'Alb
 INSERT INTO TRAINING.course (active,teacher,title,hours,level) VALUES (true,'Alberto Moratilla','Desarrollo de aplicaciones con C/C++',15,3);
 INSERT INTO TRAINING.course (active,teacher,title,hours,level) VALUES (true,'Roberto Canales','Introducción a MySQL',15,2);
 INSERT INTO TRAINING.course (active,teacher,title,hours,level) VALUES (true,'Angel Ruiz','Introducción a Linux',15,3);
-COMMIT;
