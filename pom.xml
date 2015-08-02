@@ -46,7 +46,6 @@
                         <!-- Oddly enough for Groovy files, *Spec.groovy does not work, but *Spec.java does -->
                         <include>**/*Test.java</include>
                         <include>**/*Spec.java</include>
-                        <include>**/*Spec.groovy</include>
                     </includes>
                 </configuration>
             </plugin>
