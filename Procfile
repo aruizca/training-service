@@ -1,1 +1,1 @@
-web: mvn -Dserver.port=$PORT spring-boot:run
+web: java -Dserver.port=$PORT -jar target/training-service-0.1-SNAPSHOT.jar
