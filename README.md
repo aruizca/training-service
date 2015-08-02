@@ -10,14 +10,16 @@ Training Service ![Travis CI build](https://travis-ci.org/aruizca/training-servi
  * MyBatis 3.3.0
  * H2 1.4.187
  * Maven 3.3.3
+ * CI provided with Travis CI
+ * Deployment provided by Heroku
 
 ## To run packaged artifact
 ```
 java -Dserver.port=8080 -jar target/training-service-0.1-SNAPSHOT.jar
 ```
 
-## Heroku info
-Service deployed at: http://autentia-training-service.herokuapp.com
+## Deployment info
+Service deployed at Heroku: http://autentia-training-service.herokuapp.com
 
 Endpoints available:
 * List courses (GET)
