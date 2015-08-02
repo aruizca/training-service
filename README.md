@@ -35,7 +35,7 @@ Accepts JSON payload. Eg:
  ```
  {
    "active": true,
-   "teacher": "Roberto Canales",
+   "teacher": "Angel Ruiz",
    "title": "Curso TDD",
    "hours": 15,
  }
