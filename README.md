@@ -38,6 +38,7 @@ Accepts JSON payload. Eg:
    "teacher": "Angel Ruiz",
    "title": "Curso TDD",
    "hours": 15,
+   "level": 2
  }
  ```
 
