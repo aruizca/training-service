@@ -16,12 +16,10 @@ Training Service ![Travis CI build](https://travis-ci.org/aruizca/training-servi
 ## To run packaged artifact
 ```
 java -Dserver.port=8080 -jar target/training-service-0.1-SNAPSHOT.jar
+
 ```
 
-## Deployment info
-Service deployed at Heroku: http://autentia-training-service.herokuapp.com
-
-Endpoints available:
+## Endpoints available
 * List courses (GET)
 ```
 /training-service/api/course/list
@@ -42,4 +40,19 @@ Accepts JSON payload. Eg:
    "hours": 15,
  }
  ```
+
+## Deployment info
+Service deployed at Heroku: http://autentia-training-service.herokuapp.com
+
+* Log access:
+```
+heroku logs -tail --app autentia-training-service
+```
+
+* Shell access:
+```
+heroku run bash --app autentia-training-service
+```
+
+
  
