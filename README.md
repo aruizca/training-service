@@ -28,7 +28,7 @@ java -Dserver.port=8080 -jar target/training-service-0.1-SNAPSHOT.jar
 
 * Save new course (POST)
 ```
-/training-service/api/course/list
+/training-service/api/course/save
 ```
 
 Accepts JSON payload. Eg:
